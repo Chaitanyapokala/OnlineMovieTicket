@@ -10,11 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.capg.omt.dao.IMovieDao;
 import com.capg.omt.entity.Movie;
 import com.capg.omt.service.IMovieService;
 
@@ -22,11 +20,9 @@ import com.capg.omt.service.IMovieService;
 @SpringBootTest
 class MovieTest {
 
-	@Autowired
+	@Mock
 	private IMovieService service;
 	
-	@Mock
-	private IMovieDao moviedao;
 	
 	@Test
 	public void testgetAllMovies() {
@@ -50,7 +46,7 @@ class MovieTest {
 		movielist.add(movies);
 		movielist.add(movies1);
 		
-		Mockito.when(moviedao.listOfMovies()).thenReturn(movielist);
+		Mockito.when(service.listOfMovies()).thenReturn(movielist);
 		assertThat(service.listOfMovies()).isEqualTo(movielist);
 		assertEquals(movielist.size(),2);
 		
@@ -66,7 +62,7 @@ class MovieTest {
 		movies.setMovieLength(150);
 		movies.setLanguages("Hindi");
 		movies.setMovieGenre("Comedy");
-		Mockito.when(moviedao.addMovie(movies)).thenReturn(movies);
+		Mockito.when(service.addMovie(movies)).thenReturn(movies);
 		assertThat(service.addMovie(movies)).isEqualTo(movies);
 
 	}
