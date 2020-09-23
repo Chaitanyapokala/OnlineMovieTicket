@@ -1,4 +1,4 @@
-package com.capg.omt.dao;
+package com.capg.omt.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
