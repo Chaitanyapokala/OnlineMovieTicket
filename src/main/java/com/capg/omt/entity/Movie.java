@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
 public class Movie implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	
 	@Column(name = "movieId")
 	private int movieId;
 	
