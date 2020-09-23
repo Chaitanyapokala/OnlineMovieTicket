@@ -3,11 +3,13 @@ package com.capg.omt.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.capg.omt.entity.Movie;
 import com.capg.omt.exception.MovieNotFound;
+
 
 @Repository
 @Transactional
