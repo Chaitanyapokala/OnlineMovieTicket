@@ -6,7 +6,7 @@ import com.capg.omt.entity.Movie;
 
 public interface IMovieService {
 
-	public Movie addMovie(Movie bean);
+	public Movie addMovie(Movie bean) ;
 
 	public void deleteMovie(int movieId);
 

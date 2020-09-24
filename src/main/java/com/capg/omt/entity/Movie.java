@@ -21,14 +21,14 @@ import javax.validation.constraints.Size;
 public class Movie implements Serializable {
 
 	@Id
-	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "movieId")
 	private int movieId;
 	
 	@Column(name = "movieName")
 	
-	//@NotEmpty(message = "Movie Name is Mandatory")
-	//@NotBlank(message = "Movie Name cannot be blank")
+	@NotEmpty(message = "Movie Name is Mandatory")
+	@NotBlank(message = "Movie Name cannot be blank")
 	@Size(min = 2, message = "Name should have atleast 2 characters")
 	@Pattern(regexp = "^[A-Z a-z]*$")
 	
